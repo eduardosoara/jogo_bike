@@ -19,7 +19,7 @@ function start() { // Inicio da função start()
 	var energiaAtual=3;
 	var jogo = {}
 	var velocidade=5;
-	var posicaoY = parseInt(Math.random() * 34);
+	var posicaoY = 450; //parseInt(Math.random() * 34);
 	var TECLA = {
 		W: 87,
 		S: 83,
@@ -100,11 +100,11 @@ function start() { // Inicio da função start()
 		}
 	}
 			
-	if (jogo.pressionou[TECLA.D]) {
+	/*if (jogo.pressionou[TECLA.D]) {
 				
 				//Chama função Disparo
 		disparo();	
-		}
+		}*/
 		
 	} // fim da função movejogador()
 
@@ -115,7 +115,7 @@ function start() { // Inicio da função start()
 			$("#inimigo1").css("button",posicaoY);
 					
 			if (posicaoX<=0) {
-				posicaoY = parseInt(Math.random() * 34);
+				//posicaoY = parseInt(Math.random() * 34);
 				$("#inimigo1").css("left",900);
 				$("#inimigo1").css("button",posicaoY);
 						
@@ -193,13 +193,13 @@ function start() { // Inicio da função start()
 				
 			if (colisao1.length>0) {
 				
-				energiaAtual--;
+				pontos = pontos + 100;
 				inimigo1X = parseInt($("#inimigo1").css("left"));
 				inimigo1Y = parseInt($("#inimigo1").css("top"));
-				explosao1(inimigo1X,inimigo1Y);
+				//explosao1(inimigo1X,inimigo1Y);
 			
-				posicaoY = parseInt(Math.random() * 134);
-				$("#inimigo1").css("left",694);
+				//posicaoY = parseInt(Math.random() * 134);
+				$("#inimigo1").css("left",900);
 				$("#inimigo1").css("top",posicaoY);
 					}
 
@@ -252,13 +252,13 @@ function start() { // Inicio da função start()
 
 			// jogador com o amigo
 		
-			if (colisao5.length>0) {
+			/*if (colisao5.length>0) {
 				
-				somResgate.play();
-				salvos++
+				//somResgate.play();
+				//salvos++
 				reposicionaAmigo();
 				$("#amigo").remove();
-				}
+				}*/
 
 				//Inimigo2 com o amigo
 		
@@ -304,7 +304,7 @@ function start() { // Inicio da função start()
 	
 	function reposicionaInimigo2() {
 	
-		var tempoColisao4=window.setInterval(reposiciona4, 5000);
+		var tempoColisao4=window.setInterval(reposiciona4, 200);
 			
 			function reposiciona4() {
 			window.clearInterval(tempoColisao4);
@@ -384,7 +384,7 @@ function start() { // Inicio da função start()
 	
 	function placar() {
 	
-		$("#placar").html("<h2> Pontos: " + pontos + " Salvos: " + salvos + " Perdidos: " + perdidos + "</h2>");
+		$("#placar").html("<h2> Pontos: " + pontos + /*" Salvos: " + salvos + " Perdidos: " + perdidos +*/ "</h2>");
 		
 	} //fim da função placar()
 
