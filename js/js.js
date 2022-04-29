@@ -16,7 +16,7 @@ function start() { // Inicio da função start()
 	var energiaAtual=3;
 	var jogo = {}
 	var velocidade=5;
-	var posicaoY = 450; //parseInt(Math.random() * 34);
+	var posicaoY = parseInt(Math.random() * (530-370)) + 370;
 	var TECLA = {
 		W: 87,
 		S: 83,
@@ -101,12 +101,12 @@ function start() { // Inicio da função start()
 
 			posicaoX = parseInt($("#inimigo1").css("left"));
 			$("#inimigo1").css("left",posicaoX-velocidade);
-			$("#inimigo1").css("button",posicaoY);
+			$("#inimigo1").css("top",posicaoY);
 					
 			if (posicaoX<=0) {
-				//posicaoY = parseInt(Math.random() * 34);
+				posicaoY = parseInt(Math.random() * (530-370)) + 370;
 				$("#inimigo1").css("left",900);
-				$("#inimigo1").css("button",posicaoY);
+				$("#inimigo1").css("top", posicaoY);
 						
 					}
 		} //Fim da função moveinimigo1()
@@ -139,8 +139,7 @@ function start() { // Inicio da função start()
 				inimigo1Y = parseInt($("#inimigo1").css("top"));
 				//explosao1(inimigo1X,inimigo1Y);
 			
-				//posicaoY = parseInt(Math.random() * 134);
-				$("#inimigo1").css("left",900);
+				posicaoY = parseInt(Math.random() * (530-370)) + 370;
 				$("#inimigo1").css("top",posicaoY);
 					}
 
